@@ -18,10 +18,7 @@ public:
         for(auto data : dict)
         {
             if(data.second > 1)
-            {
-                for(int i=1;i<data.second;i++)
-                    total += data.second - i;
-            }
+                total += (data.second - 1) * data.second / 2;
         }
         return total;
     }

@@ -36,7 +36,6 @@ public:
     string tree2str(TreeNode* root) 
     {
         string ans = "";
-        TreeNode* node = root;
-        return preorder(node, ans);
+        return preorder(root, ans);
     }
 };

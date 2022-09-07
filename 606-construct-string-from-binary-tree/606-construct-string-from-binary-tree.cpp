@@ -11,7 +11,7 @@
  */
 class Solution {
 public:
-    string preorder(TreeNode* curr, string ans)
+    string preorder(TreeNode* curr, string &ans)
     {
         bool check = true;
         ans += to_string(curr->val);

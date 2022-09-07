@@ -11,14 +11,14 @@
  */
 class Solution {
 public:
-    string preorder(TreeNode* curr, string &ans)
+    void preorder(TreeNode* curr, string &ans)
     {
         bool check = true;
         ans += to_string(curr->val);
         if(curr->left)
         {
             ans += "(";
-            ans = preorder(curr->left, ans);
+            preorder(curr->left, ans);
             ans += ")";
         }
         else
@@ -28,14 +28,14 @@ public:
             if(!check)
                 ans += "()";
             ans += "(";
-            ans = preorder(curr->right, ans);
+            preorder(curr->right, ans);
             ans += ")";
         }
-        return ans;
     }
     string tree2str(TreeNode* root) 
     {
         string ans = "";
-        return preorder(root, ans);
+        preorder(root, ans);
+        return ans;
     }
 };

@@ -2,7 +2,7 @@ class Solution {
 public:
     int mostFrequent(vector<int>& nums, int key) 
     {
-        map<int, int> d;
+        unordered_map<int, int> d;
         for(int i=0;i<nums.size()-1;i++)
         {
             if(key == nums[i])

@@ -3,6 +3,7 @@ public:
     int countVowelSubstrings(string word) 
     {
         unordered_map<string, int> d;
+        int cnt = 0;
         string curr = "";
         bool a = false, e = false, i = false, o = false, u = false;
         for(int j=0;j<word.length();j++)
@@ -37,12 +38,7 @@ public:
                 else
                     break;
                 if(a && e && i && o && u)
-                {
-                    if(d.find(curr) == d.end())
-                        d[curr] = 1;
-                    else
-                        d[curr]++;
-                }
+                    cnt++;
             }
             a=false;
             e=false;
@@ -51,9 +47,6 @@ public:
             u=false;
             curr = "";
         }
-        int cnt = 0;
-        for(auto ele:d)
-            cnt += ele.second;
         return cnt;
     }
 };
